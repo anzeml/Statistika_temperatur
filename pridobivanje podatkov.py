@@ -4,7 +4,7 @@ import re
 import time
 from datetime import datetime
 
-f=open("temparatura_10let.txt","w")
+f=open("temparatura_5let.txt","w")
 def timestamp(curr, format):
     stime = time.mktime(time.strptime(curr, format))
     print(stime)
