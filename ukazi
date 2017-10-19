@@ -1,0 +1,17 @@
+CREATE TABLE podatki_temperature (
+    DATUM        VARCHAR (20),
+    CAS        VARCHAR (20),
+    TEMPERATURA VARCHAR (20)
+);
+
+alter table podatki_temperature
+add column mesec number;
+
+update podatki_temperature
+set mesec=substr(datum,1,6);
+
+create view mesecna_povprecja as
+select mesec, avg(temperatura) from podatki_temperature
+group by mesec;
+
+drop view mesecna_povprecja;
